@@ -1,52 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<!--
-  Phase 1 layout: sidebar shell + welcome content.
-  Modules are added to the sidebar as their phases are implemented.
--->
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.paradox.controller.MainController"
             prefWidth="1100" prefHeight="700">
+
+    <top>
+        <HBox styleClass="header" spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="16" bottom="10" left="16"/>
+            </padding>
+            <Label text="PARADOX" styleClass="header-title"/>
+            <Label text="Deadlock Detection and Recovery Laboratory"
+                   styleClass="header-subtitle"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Simulation:" styleClass="header-label"/>
+            <ComboBox fx:id="simulationCombo" prefWidth="260"/>
+            <Button text="Open" onAction="#openSelectedSimulation" styleClass="button-secondary"/>
+            <Button text="New..." onAction="#createSimulation" styleClass="button-primary"/>
+            <Button text="Delete" onAction="#deleteSelectedSimulation" styleClass="button-danger"/>
+            <Label fx:id="openSimulationLabel" text="No simulation open" styleClass="header-status"/>
+        </HBox>
+    </top>
 
     <left>
         <VBox styleClass="sidebar" spacing="2" prefWidth="220">
             <padding>
-                <Insets top="24" right="12" bottom="20" left="18"/>
+                <Insets top="18" right="12" bottom="18" left="14"/>
             </padding>
-            <Label text="PARADOX" styleClass="sidebar-title"/>
-            <Label text="Deadlock Laboratory" styleClass="sidebar-subtitle"/>
-            <Region VBox.vgrow="ALWAYS" maxHeight="16"/>
-            <Label text="Dashboard" styleClass="nav-item, nav-item-active"/>
-            <Label text="Processes" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="Resources" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="Allocation" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="Detection" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="Banker's Algorithm" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="Visualizer" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="Recovery" styleClass="nav-item, nav-item-disabled"/>
-            <Label text="History" styleClass="nav-item, nav-item-disabled"/>
+            <Button text="Dashboard" onAction="#openDashboard" fx:id="dashboardButton"
+                    styleClass="nav-button, nav-button-active" maxWidth="Infinity"/>
+            <Button text="Process Manager" onAction="#openProcesses" fx:id="processesButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Resource Manager" onAction="#openResources" fx:id="resourcesButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Allocation Engine" onAction="#openAllocation" fx:id="allocationButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Deadlock Detection" onAction="#openDetection" fx:id="detectionButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Banker's Algorithm" onAction="#openBankers" fx:id="bankersButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Visualizer" onAction="#openVisualizer" fx:id="visualizerButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Recovery Engine" onAction="#openRecovery" fx:id="recoveryButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="History" onAction="#openHistory" fx:id="historyButton"
+                    styleClass="nav-button" maxWidth="Infinity"/>
             <Region VBox.vgrow="ALWAYS"/>
-            <Label text="Phase 1 in progress" styleClass="sidebar-footer"/>
+            <Label text="Academic OS laboratory" styleClass="sidebar-footer"/>
         </VBox>
     </left>
 
     <center>
-        <VBox alignment="CENTER" spacing="10" styleClass="welcome-pane">
-            <padding>
-                <Insets top="40" right="40" bottom="40" left="40"/>
-            </padding>
-            <Label text="Paradox" styleClass="welcome-title"/>
-            <Label text="Deadlock Detection and Recovery Laboratory"
-                   styleClass="welcome-subtitle"/>
-            <Label text="Project skeleton is running. Algorithms, modules and the database layer arrive in the next phases."
-                   styleClass="welcome-note" wrapText="true"/>
-        </VBox>
+        <StackPane fx:id="contentPane"/>
     </center>
 
 </BorderPane>
