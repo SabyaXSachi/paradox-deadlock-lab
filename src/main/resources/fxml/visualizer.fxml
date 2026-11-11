@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.paradox.controller.VisualizerController"
+      spacing="10">
+    <padding>
+        <Insets top="18" right="22" bottom="18" left="22"/>
+    </padding>
+
+    <Label text="Deadlock Visualizer" styleClass="view-title"/>
+    <Label text="Live resource allocation graph. Circles are processes, rounded squares are resource types. Solid arrows: allocations (resource to process). Dashed arrows: requests (process to resource)."
+           styleClass="view-subtitle" wrapText="true"/>
+
+    <ScrollPane fx:id="graphScroll" fitToWidth="true" VBox.vgrow="ALWAYS"
+                styleClass="graph-scroll">
+        <Pane fx:id="graphPane" styleClass="graph-pane"/>
+    </ScrollPane>
+
+    <HBox spacing="18" alignment="CENTER_LEFT">
+        <Label text="—" styleClass="legend-allocation"/>
+        <Label text="allocation (R to P)" styleClass="hint-label"/>
+        <Label text="- - -" styleClass="legend-request"/>
+        <Label text="request (P to R)" styleClass="hint-label"/>
+        <Label text="●" styleClass="legend-deadlock"/>
+        <Label text="deadlocked process" styleClass="hint-label"/>
+        <Label text="■" styleClass="legend-cycle"/>
+        <Label text="part of a cycle" styleClass="hint-label"/>
+    </HBox>
+
+    <Label fx:id="graphStatusLabel" styleClass="explanation-label" wrapText="true"/>
+</VBox>
