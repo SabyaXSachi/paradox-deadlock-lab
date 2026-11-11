@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  Phase 1 layout: sidebar shell + welcome content.
+  Modules are added to the sidebar as their phases are implemented.
+-->
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefWidth="1100" prefHeight="700">
+
+    <left>
+        <VBox styleClass="sidebar" spacing="2" prefWidth="220">
+            <padding>
+                <Insets top="24" right="12" bottom="20" left="18"/>
+            </padding>
+            <Label text="PARADOX" styleClass="sidebar-title"/>
+            <Label text="Deadlock Laboratory" styleClass="sidebar-subtitle"/>
+            <Region VBox.vgrow="ALWAYS" maxHeight="16"/>
+            <Label text="Dashboard" styleClass="nav-item, nav-item-active"/>
+            <Label text="Processes" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="Resources" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="Allocation" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="Detection" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="Banker's Algorithm" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="Visualizer" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="Recovery" styleClass="nav-item, nav-item-disabled"/>
+            <Label text="History" styleClass="nav-item, nav-item-disabled"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="Phase 1 in progress" styleClass="sidebar-footer"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" styleClass="welcome-pane">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+            <Label text="Paradox" styleClass="welcome-title"/>
+            <Label text="Deadlock Detection and Recovery Laboratory"
+                   styleClass="welcome-subtitle"/>
+            <Label text="Project skeleton is running. Algorithms, modules and the database layer arrive in the next phases."
+                   styleClass="welcome-note" wrapText="true"/>
+        </VBox>
+    </center>
+
+</BorderPane>

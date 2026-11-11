@@ -1,0 +1,77 @@
+/*
+ * Paradox - global stylesheet.
+ * Single source of truth for the application's look and feel.
+ * Palette: deep navy sidebar, neutral light content, one restrained blue accent.
+ */
+
+.root {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1f2430;
+    -fx-background-color: #f5f6f8;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+    -fx-background-color: #1f2a44;
+}
+
+.sidebar-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2;
+}
+
+.sidebar-subtitle {
+    -fx-text-fill: #8fa0c2;
+    -fx-font-size: 11px;
+    -fx-padding: 0 0 12 0;
+}
+
+.nav-item {
+    -fx-text-fill: #c3cde2;
+    -fx-font-size: 13px;
+    -fx-padding: 8 12 8 12;
+    -fx-background-radius: 6;
+}
+
+.nav-item-active {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-color: #2f6fed;
+}
+
+.nav-item-disabled {
+    -fx-text-fill: #64748f;
+}
+
+.sidebar-footer {
+    -fx-text-fill: #64748f;
+    -fx-font-size: 11px;
+}
+
+/* ---------- Content ---------- */
+
+.welcome-pane {
+    -fx-background-color: #f5f6f8;
+}
+
+.welcome-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2a44;
+}
+
+.welcome-subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: #47536b;
+}
+
+.welcome-note {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7a869c;
+    -fx-text-alignment: center;
+    -fx-max-width: 460;
+}
