@@ -290,6 +290,17 @@
     -fx-background-color: #f9d2d2;
 }
 
+/* ---------- Keyboard focus ---------- */
+
+.button:focused,
+.combo-box:focused,
+.spinner:focused,
+.text-field:focused,
+.table-view:focused,
+.list-view:focused {
+    -fx-effect: dropshadow(gaussian, #ffbf47, 5, 0.65, 0, 0);
+}
+
 /* ---------- Tables and lists ---------- */
 
 .table-view {

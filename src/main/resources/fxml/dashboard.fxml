@@ -59,7 +59,8 @@
     <HBox spacing="16" VBox.vgrow="ALWAYS">
         <VBox spacing="6" HBox.hgrow="ALWAYS">
             <Label text="Recent simulations" styleClass="section-title"/>
-            <TableView fx:id="recentSimulationsTable" VBox.vgrow="ALWAYS">
+            <TableView fx:id="recentSimulationsTable" accessibleText="Recent simulations"
+                       VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="nameColumn" text="Name" prefWidth="160"/>
                     <TableColumn fx:id="statusColumn" text="Status" prefWidth="110"/>
@@ -72,7 +73,9 @@
         </VBox>
         <VBox spacing="6" HBox.hgrow="ALWAYS">
             <Label text="Recent events (open simulation)" styleClass="section-title"/>
-            <ListView fx:id="recentEventsList" VBox.vgrow="ALWAYS"/>
+            <ListView fx:id="recentEventsList"
+                      accessibleText="Recent events for the open simulation"
+                      VBox.vgrow="ALWAYS"/>
         </VBox>
     </HBox>
 </VBox>

@@ -119,6 +119,12 @@ src/test/java/com/paradox/       55 JUnit 5 tests (algorithms, engine, services,
   `ON DELETE RESTRICT` on allocations/requests (a resource in use cannot be
   deleted), `ON DELETE CASCADE` for simulation cleanup.
 
+## Accessibility
+
+Interactive controls display a visible focus indicator for keyboard navigation.
+The simulation selector is associated with its label, and the dashboard's
+recent-activity views have accessible names.
+
 ## Test coverage
 
 - Detection: no deadlock, two-process deadlock, three-process circular wait,
