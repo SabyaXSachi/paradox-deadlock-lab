@@ -293,6 +293,7 @@
 /* ---------- Keyboard focus ---------- */
 
 .button:focused,
+.toggle-button:focused,
 .combo-box:focused,
 .spinner:focused,
 .text-field:focused,

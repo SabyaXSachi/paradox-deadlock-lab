@@ -19,7 +19,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
@@ -27,6 +26,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -41,15 +41,15 @@ public class MainController implements SimulationListener {
     @FXML private StackPane contentPane;
     @FXML private ComboBox<Simulation> simulationCombo;
     @FXML private Label openSimulationLabel;
-    @FXML private Button dashboardButton;
-    @FXML private Button processesButton;
-    @FXML private Button resourcesButton;
-    @FXML private Button allocationButton;
-    @FXML private Button detectionButton;
-    @FXML private Button bankersButton;
-    @FXML private Button visualizerButton;
-    @FXML private Button recoveryButton;
-    @FXML private Button historyButton;
+    @FXML private ToggleButton dashboardButton;
+    @FXML private ToggleButton processesButton;
+    @FXML private ToggleButton resourcesButton;
+    @FXML private ToggleButton allocationButton;
+    @FXML private ToggleButton detectionButton;
+    @FXML private ToggleButton bankersButton;
+    @FXML private ToggleButton visualizerButton;
+    @FXML private ToggleButton recoveryButton;
+    @FXML private ToggleButton historyButton;
 
     private final Map<String, Node> viewCache = new HashMap<>();
     private final Map<String, String> viewTitles = new HashMap<>();
@@ -174,7 +174,7 @@ public class MainController implements SimulationListener {
     }
 
     private void highlightActiveButton(String viewName) {
-        Map<String, Button> buttons = Map.of(
+        Map<String, ToggleButton> buttons = Map.of(
                 "dashboard", dashboardButton, "processes", processesButton,
                 "resources", resourcesButton, "allocation", allocationButton,
                 "detection", detectionButton, "bankers", bankersButton,
@@ -182,7 +182,9 @@ public class MainController implements SimulationListener {
                 "history", historyButton);
         buttons.forEach((name, button) -> {
             button.getStyleClass().remove("nav-button-active");
-            if (name.equals(viewName)) {
+            boolean selected = name.equals(viewName);
+            button.setSelected(selected);
+            if (selected) {
                 button.getStyleClass().add("nav-button-active");
             }
         });

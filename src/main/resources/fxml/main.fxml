@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -33,29 +35,42 @@
         </HBox>
     </top>
 
+    <fx:define>
+        <ToggleGroup fx:id="navigationGroup"/>
+    </fx:define>
+
     <left>
         <VBox styleClass="sidebar" spacing="2" prefWidth="220">
             <padding>
                 <Insets top="18" right="12" bottom="18" left="14"/>
             </padding>
-            <Button text="Dashboard" onAction="#openDashboard" fx:id="dashboardButton"
-                    styleClass="nav-button, nav-button-active" maxWidth="Infinity"/>
-            <Button text="Process Manager" onAction="#openProcesses" fx:id="processesButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Resource Manager" onAction="#openResources" fx:id="resourcesButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Allocation Engine" onAction="#openAllocation" fx:id="allocationButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Deadlock Detection" onAction="#openDetection" fx:id="detectionButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Banker's Algorithm" onAction="#openBankers" fx:id="bankersButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Visualizer" onAction="#openVisualizer" fx:id="visualizerButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Recovery Engine" onAction="#openRecovery" fx:id="recoveryButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="History" onAction="#openHistory" fx:id="historyButton"
-                    styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Dashboard" onAction="#openDashboard" fx:id="dashboardButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button, nav-button-active" maxWidth="Infinity"/>
+            <ToggleButton text="Process Manager" onAction="#openProcesses" fx:id="processesButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Resource Manager" onAction="#openResources" fx:id="resourcesButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Allocation Engine" onAction="#openAllocation" fx:id="allocationButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Deadlock Detection" onAction="#openDetection" fx:id="detectionButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Banker's Algorithm" onAction="#openBankers" fx:id="bankersButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Visualizer" onAction="#openVisualizer" fx:id="visualizerButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="Recovery Engine" onAction="#openRecovery" fx:id="recoveryButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
+            <ToggleButton text="History" onAction="#openHistory" fx:id="historyButton"
+                          toggleGroup="$navigationGroup"
+                          styleClass="nav-button" maxWidth="Infinity"/>
             <Region VBox.vgrow="ALWAYS"/>
             <Label text="Academic OS laboratory" styleClass="sidebar-footer"/>
         </VBox>
