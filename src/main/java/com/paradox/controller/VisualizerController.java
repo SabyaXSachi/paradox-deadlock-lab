@@ -53,8 +53,11 @@ public class VisualizerController implements SimulationListener {
         graphPane.getChildren().clear();
         SimulationEngineSnapshot snapshot = currentSnapshot();
         if (snapshot == null) {
-            graphStatusLabel.setText("Create or open a simulation to see the "
-                    + "resource allocation graph.");
+            String message = "Create or open a simulation to see the resource allocation graph.";
+            graphStatusLabel.setText(message);
+            graphStatusLabel.setAccessibleText(
+                    "No simulation is open. The resource allocation graph has no processes, "
+                            + "resources, or edges.");
             return;
         }
 
@@ -93,6 +96,7 @@ public class VisualizerController implements SimulationListener {
         }
 
         graphStatusLabel.setText(buildStatusText(graph, deadlocked));
+        graphStatusLabel.setAccessibleText(buildAccessibleDescription(graph, deadlocked));
     }
 
     // The visualizer reads only live engine data, so a tiny holder keeps
@@ -251,6 +255,36 @@ public class VisualizerController implements SimulationListener {
                     + "have multiple instances - run detection to decide. " + edges + ".";
         }
         return "No cycle in the graph. " + edges + ".";
+    }
+
+    private String buildAccessibleDescription(ResourceAllocationGraph graph,
+                                              Set<String> deadlocked) {
+        String processes = describeNodes(graph.getProcessNodes());
+        String resources = describeNodes(graph.getResourceNodes());
+        String allocations = describeEdges(graph.getAssignmentEdges());
+        String requests = describeEdges(graph.getRequestEdges());
+
+        DetectionResult result = AppContext.getLastDetectionResult();
+        String detection = result == null ? "Deadlock detection has not been run."
+                : deadlocked.isEmpty() ? "The last detection found no deadlock."
+                : "The last detection identified these deadlocked processes: "
+                        + describeNodes(graph.getProcessNodes().stream()
+                                .filter(deadlocked::contains).toList()) + ".";
+
+        return "Resource allocation graph. Processes: " + processes + ". Resources: "
+                + resources + ". Allocations from resources to processes: " + allocations
+                + ". Requests from processes to resources: " + requests + ". " + detection;
+    }
+
+    private String describeNodes(List<String> keys) {
+        return keys.isEmpty() ? "none"
+                : String.join(", ", keys.stream().map(this::nameOf).toList());
+    }
+
+    private String describeEdges(List<String[]> edges) {
+        return edges.isEmpty() ? "none"
+                : String.join("; ", edges.stream()
+                        .map(edge -> nameOf(edge[0]) + " to " + nameOf(edge[1])).toList());
     }
 
     @Override
