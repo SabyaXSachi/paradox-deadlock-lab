@@ -26,11 +26,11 @@
     <TableView fx:id="claimTable" prefHeight="180"/>
 
     <HBox styleClass="form-row" spacing="10" alignment="CENTER_LEFT">
-        <Label text="Process" styleClass="form-label"/>
+        <Label text="Process" styleClass="form-label" labelFor="$processCombo"/>
         <ComboBox fx:id="processCombo" prefWidth="140"/>
-        <Label text="Resource" styleClass="form-label"/>
+        <Label text="Resource" styleClass="form-label" labelFor="$resourceCombo"/>
         <ComboBox fx:id="resourceCombo" prefWidth="170"/>
-        <Label text="Instances" styleClass="form-label"/>
+        <Label text="Instances" styleClass="form-label" labelFor="$claimSpinner"/>
         <Spinner fx:id="claimSpinner" prefWidth="90"/>
         <Button text="Set max claim" onAction="#setClaim" styleClass="button-secondary"/>
         <Button text="Run safety check" onAction="#runSafetyCheck" styleClass="button-primary"/>

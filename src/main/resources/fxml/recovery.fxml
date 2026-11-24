@@ -43,11 +43,11 @@
         <VBox spacing="6" HBox.hgrow="ALWAYS">
             <Label text="Resource preemption (simulation)" styleClass="section-title"/>
             <HBox styleClass="form-row" spacing="10" alignment="CENTER_LEFT">
-                <Label text="Victim" styleClass="form-label"/>
+                <Label text="Victim" styleClass="form-label" labelFor="$processCombo"/>
                 <ComboBox fx:id="processCombo" prefWidth="170"/>
-                <Label text="Resource" styleClass="form-label"/>
+                <Label text="Resource" styleClass="form-label" labelFor="$resourceCombo"/>
                 <ComboBox fx:id="resourceCombo" prefWidth="160"/>
-                <Label text="Instances" styleClass="form-label"/>
+                <Label text="Instances" styleClass="form-label" labelFor="$instancesSpinner"/>
                 <Spinner fx:id="instancesSpinner" prefWidth="85"/>
             </HBox>
             <Button text="Preempt and mark victim for rollback" onAction="#preemptSelected"

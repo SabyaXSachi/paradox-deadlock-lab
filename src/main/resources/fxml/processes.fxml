@@ -23,11 +23,11 @@
            styleClass="view-subtitle"/>
 
     <HBox styleClass="form-row" spacing="10" alignment="CENTER_LEFT">
-        <Label text="Name" styleClass="form-label"/>
+        <Label text="Name" styleClass="form-label" labelFor="$nameField"/>
         <TextField fx:id="nameField" promptText="e.g. P1" prefWidth="120"/>
-        <Label text="Arrival time" styleClass="form-label"/>
+        <Label text="Arrival time" styleClass="form-label" labelFor="$arrivalSpinner"/>
         <Spinner fx:id="arrivalSpinner" prefWidth="100"/>
-        <Label text="Priority" styleClass="form-label"/>
+        <Label text="Priority" styleClass="form-label" labelFor="$prioritySpinner"/>
         <Spinner fx:id="prioritySpinner" prefWidth="100"/>
         <Button text="Add process" onAction="#addProcess" styleClass="button-primary"/>
     </HBox>

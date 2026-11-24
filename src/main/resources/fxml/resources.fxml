@@ -23,9 +23,9 @@
            styleClass="view-subtitle"/>
 
     <HBox styleClass="form-row" spacing="10" alignment="CENTER_LEFT">
-        <Label text="Name" styleClass="form-label"/>
+        <Label text="Name" styleClass="form-label" labelFor="$nameField"/>
         <TextField fx:id="nameField" promptText="e.g. R1" prefWidth="120"/>
-        <Label text="Total instances" styleClass="form-label"/>
+        <Label text="Total instances" styleClass="form-label" labelFor="$instancesSpinner"/>
         <Spinner fx:id="instancesSpinner" prefWidth="100"/>
         <Button text="Add resource" onAction="#addResource" styleClass="button-primary"/>
     </HBox>
