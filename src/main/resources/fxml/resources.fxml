@@ -30,7 +30,7 @@
         <Button text="Add resource" onAction="#addResource" styleClass="button-primary"/>
     </HBox>
 
-    <TableView fx:id="resourceTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="resourceTable" accessibleText="Resources" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="nameColumn" text="Name" prefWidth="120"/>
             <TableColumn fx:id="totalColumn" text="Total" prefWidth="110"/>

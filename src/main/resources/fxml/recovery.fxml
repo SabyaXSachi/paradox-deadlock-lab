@@ -32,7 +32,8 @@
     <HBox spacing="16">
         <VBox spacing="6" HBox.hgrow="ALWAYS">
             <Label text="Deadlocked processes" styleClass="section-title"/>
-            <ListView fx:id="deadlockedList" prefHeight="130"/>
+            <ListView fx:id="deadlockedList" accessibleText="Deadlocked processes"
+                      prefHeight="130"/>
             <HBox spacing="10">
                 <Button text="Terminate selected" onAction="#terminateSelected"
                         styleClass="button-danger"/>
@@ -60,7 +61,7 @@
     <Label fx:id="resultLabel" styleClass="explanation-label" wrapText="true"/>
 
     <Label text="Recovery log (stored in MySQL)" styleClass="section-title"/>
-    <TableView fx:id="logTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="logTable" accessibleText="Recovery log" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="strategyColumn" text="Strategy" prefWidth="170"/>
             <TableColumn fx:id="targetColumn" text="Target" prefWidth="380"/>

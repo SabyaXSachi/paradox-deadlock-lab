@@ -126,6 +126,7 @@ The simulation selector is associated with its label, and the dashboard's
 recent-activity views have accessible names. Muted text and accent colors are
 selected to meet WCAG AA contrast against their backgrounds. The visualizer's
 screen-reader description lists graph nodes, edges, and the latest detection result.
+Tables, lists, and snapshot details across the application have descriptive names.
 
 ## Test coverage
 

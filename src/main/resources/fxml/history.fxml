@@ -24,7 +24,8 @@
         <Label text="Simulation History" styleClass="view-title"/>
         <Label text="Everything stored in MySQL. Select a simulation to inspect its logs and replay its steps."
                styleClass="view-subtitle" wrapText="true"/>
-        <TableView fx:id="simulationTable" VBox.vgrow="ALWAYS">
+        <TableView fx:id="simulationTable" accessibleText="Simulation history"
+                   VBox.vgrow="ALWAYS">
             <columns>
                 <TableColumn fx:id="simNameColumn" text="Name" prefWidth="170"/>
                 <TableColumn fx:id="simStatusColumn" text="Status" prefWidth="100"/>
@@ -47,7 +48,8 @@
                 <padding>
                     <Insets top="12" right="12" bottom="12" left="12"/>
                 </padding>
-                <ListView fx:id="eventList" VBox.vgrow="ALWAYS"/>
+                <ListView fx:id="eventList" accessibleText="Simulation event log"
+                          VBox.vgrow="ALWAYS"/>
             </VBox>
         </Tab>
         <Tab text="Deadlock detections">
@@ -55,7 +57,8 @@
                 <padding>
                     <Insets top="12" right="12" bottom="12" left="12"/>
                 </padding>
-                <ListView fx:id="deadlockList" VBox.vgrow="ALWAYS"/>
+                <ListView fx:id="deadlockList" accessibleText="Deadlock detection history"
+                          VBox.vgrow="ALWAYS"/>
             </VBox>
         </Tab>
         <Tab text="Recovery logs">
@@ -63,7 +66,8 @@
                 <padding>
                     <Insets top="12" right="12" bottom="12" left="12"/>
                 </padding>
-                <TableView fx:id="recoveryTable" VBox.vgrow="ALWAYS">
+                <TableView fx:id="recoveryTable" accessibleText="Recovery history"
+                           VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="recStrategyColumn" text="Strategy" prefWidth="160"/>
                         <TableColumn fx:id="recTargetColumn" text="Target" prefWidth="320"/>
@@ -82,8 +86,10 @@
                 </padding>
                 <Label text="Every simulation step was snapshotted automatically. Select a step to see the full state at that moment."
                        styleClass="hint-label" wrapText="true"/>
-                <ListView fx:id="snapshotList" prefHeight="160"/>
-                <TextArea fx:id="replayArea" VBox.vgrow="ALWAYS" editable="false"
+                <ListView fx:id="snapshotList" accessibleText="Simulation snapshots"
+                          prefHeight="160"/>
+                <TextArea fx:id="replayArea" accessibleText="Selected snapshot details"
+                          VBox.vgrow="ALWAYS" editable="false"
                           styleClass="replay-area" wrapText="true"/>
             </VBox>
         </Tab>

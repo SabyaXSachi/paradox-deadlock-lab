@@ -38,7 +38,8 @@
     </HBox>
 
     <Label text="Current allocations" styleClass="section-title"/>
-    <TableView fx:id="allocationTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="allocationTable" accessibleText="Current resource allocations"
+               VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="allocProcessColumn" text="Process" prefWidth="140"/>
             <TableColumn fx:id="allocResourceColumn" text="Resource" prefWidth="140"/>
@@ -50,7 +51,8 @@
     </TableView>
 
     <Label text="Pending requests (waiting processes)" styleClass="section-title"/>
-    <TableView fx:id="requestTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="requestTable" accessibleText="Pending resource requests"
+               VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="requestProcessColumn" text="Process" prefWidth="120"/>
             <TableColumn fx:id="requestResourceColumn" text="Resource" prefWidth="120"/>

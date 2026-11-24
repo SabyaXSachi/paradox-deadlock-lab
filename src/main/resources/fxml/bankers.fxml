@@ -23,7 +23,8 @@
            styleClass="view-subtitle" wrapText="true"/>
 
     <Label text="Maximum-claim matrix (Need = Maximum - Allocation)" styleClass="section-title"/>
-    <TableView fx:id="claimTable" prefHeight="180"/>
+    <TableView fx:id="claimTable" accessibleText="Maximum resource claims"
+                prefHeight="180"/>
 
     <HBox styleClass="form-row" spacing="10" alignment="CENTER_LEFT">
         <Label text="Process" styleClass="form-label" labelFor="$processCombo"/>
@@ -46,5 +47,6 @@
     <Label fx:id="messageLabel" styleClass="explanation-label" wrapText="true"/>
 
     <Label text="Algorithm execution - step by step" styleClass="section-title"/>
-    <ListView fx:id="stepsList" VBox.vgrow="ALWAYS"/>
+    <ListView fx:id="stepsList" accessibleText="Bankers algorithm execution steps"
+              VBox.vgrow="ALWAYS"/>
 </VBox>

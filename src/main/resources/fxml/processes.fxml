@@ -32,7 +32,7 @@
         <Button text="Add process" onAction="#addProcess" styleClass="button-primary"/>
     </HBox>
 
-    <TableView fx:id="processTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="processTable" accessibleText="Processes" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="nameColumn" text="Name" prefWidth="90"/>
             <TableColumn fx:id="arrivalColumn" text="Arrival" prefWidth="80"/>

@@ -37,16 +37,19 @@
         </columnConstraints>
         <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <Label text="Deadlocked processes" styleClass="section-title"/>
-            <ListView fx:id="deadlockedList" prefHeight="120"/>
+            <ListView fx:id="deadlockedList" accessibleText="Deadlocked processes"
+                      prefHeight="120"/>
         </VBox>
         <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
             <Label text="Processes that can finish" styleClass="section-title"/>
-            <ListView fx:id="finishedList" prefHeight="120"/>
+            <ListView fx:id="finishedList" accessibleText="Processes that can finish"
+                      prefHeight="120"/>
         </VBox>
     </GridPane>
 
     <Label fx:id="workVectorLabel" text="Final Work vector: -" styleClass="form-label"/>
 
     <Label text="Algorithm execution - step by step" styleClass="section-title"/>
-    <ListView fx:id="stepsList" VBox.vgrow="ALWAYS"/>
+    <ListView fx:id="stepsList" accessibleText="Deadlock detection algorithm steps"
+              VBox.vgrow="ALWAYS"/>
 </VBox>
