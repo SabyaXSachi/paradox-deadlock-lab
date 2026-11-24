@@ -25,7 +25,7 @@
 }
 
 .header-subtitle {
-    -fx-text-fill: #7a869c;
+    -fx-text-fill: #546176;
     -fx-font-size: 12px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .header-status {
-    -fx-text-fill: #2f6fed;
+    -fx-text-fill: #2559c7;
     -fx-font-weight: bold;
     -fx-padding: 0 0 0 8;
 }
@@ -46,7 +46,7 @@
 }
 
 .sidebar-footer {
-    -fx-text-fill: #64748f;
+    -fx-text-fill: #bac5d8;
     -fx-font-size: 11px;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .nav-button-active {
-    -fx-background-color: #2f6fed;
+    -fx-background-color: #2559c7;
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
 }
@@ -81,7 +81,7 @@
 
 .view-subtitle {
     -fx-font-size: 13px;
-    -fx-text-fill: #7a869c;
+    -fx-text-fill: #546176;
 }
 
 .section-title {
@@ -92,7 +92,7 @@
 
 .hint-label {
     -fx-font-size: 11px;
-    -fx-text-fill: #8b96ab;
+    -fx-text-fill: #546176;
 }
 
 .explanation-label {
@@ -130,12 +130,12 @@
 }
 
 .legend-deadlock {
-    -fx-text-fill: #e05252;
+    -fx-text-fill: #c23e3e;
     -fx-font-size: 14px;
 }
 
 .legend-cycle {
-    -fx-text-fill: #f0a13a;
+    -fx-text-fill: #a65c00;
     -fx-font-size: 14px;
 }
 
@@ -165,7 +165,7 @@
 
 .welcome-note {
     -fx-font-size: 13px;
-    -fx-text-fill: #7a869c;
+    -fx-text-fill: #546176;
     -fx-text-alignment: center;
     -fx-max-width: 460;
 }
@@ -183,7 +183,7 @@
 }
 
 .stat-label {
-    -fx-text-fill: #6b7890;
+    -fx-text-fill: #566174;
     -fx-font-size: 12px;
 }
 
@@ -213,7 +213,7 @@
 }
 
 .status-idle {
-    -fx-text-fill: #6b7890;
+    -fx-text-fill: #566174;
     -fx-background-color: #eef1f5;
 }
 
@@ -234,7 +234,7 @@
 }
 
 .state-terminated {
-    -fx-text-fill: #8b96ab;
+    -fx-text-fill: #546176;
 }
 
 /* ---------- Forms and buttons ---------- */
@@ -252,7 +252,7 @@
 }
 
 .button-primary {
-    -fx-background-color: #2f6fed;
+    -fx-background-color: #2559c7;
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
@@ -261,12 +261,12 @@
 }
 
 .button-primary:hover {
-    -fx-background-color: #2559c7;
+    -fx-background-color: #1f4aab;
 }
 
 .button-secondary {
     -fx-background-color: #e8eefc;
-    -fx-text-fill: #2f6fed;
+    -fx-text-fill: #2559c7;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
     -fx-padding: 7 16 7 16;

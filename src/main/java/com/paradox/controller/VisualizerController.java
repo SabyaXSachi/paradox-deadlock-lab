@@ -123,7 +123,7 @@ public class VisualizerController implements SimulationListener {
     private void drawProcessNode(String key, double x, double y, boolean deadlocked,
                                  boolean inCycle) {
         Circle circle = new Circle(x, y, NODE_RADIUS);
-        circle.setFill(deadlocked ? Color.valueOf("#e05252") : Color.valueOf("#2f6fed"));
+        circle.setFill(deadlocked ? Color.valueOf("#e05252") : Color.valueOf("#2559c7"));
         circle.setStroke(inCycle && !deadlocked ? Color.valueOf("#e05252")
                 : Color.valueOf("#1f2a44"));
         circle.setStrokeWidth(inCycle || deadlocked ? 3 : 1.5);

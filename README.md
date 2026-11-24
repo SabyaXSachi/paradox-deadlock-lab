@@ -123,7 +123,8 @@ src/test/java/com/paradox/       55 JUnit 5 tests (algorithms, engine, services,
 
 Interactive controls display a visible focus indicator for keyboard navigation.
 The simulation selector is associated with its label, and the dashboard's
-recent-activity views have accessible names.
+recent-activity views have accessible names. Muted text and accent colors are
+selected to meet WCAG AA contrast against their backgrounds.
 
 ## Test coverage
 
